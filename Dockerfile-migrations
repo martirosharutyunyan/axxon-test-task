@@ -1,0 +1,8 @@
+FROM gomicro/goose
+
+WORKDIR /app
+
+COPY ./pkg/migrations/ .
+COPY docker-migrations.sh .
+
+CMD ["sh", "docker-migrations.sh"]
